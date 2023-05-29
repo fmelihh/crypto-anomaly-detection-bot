@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "crypto-anomaly-detection-bot"
+version = "0.1.0"
+description = ""
+authors = ["Furkan Melih Ercan <furkan.ercan@b2metric.com>"]
+readme = "README.md"
+packages = [{include = "crypto_anomaly_detection_bot"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jupyter = "^1.0.0"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
