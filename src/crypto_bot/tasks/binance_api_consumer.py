@@ -4,7 +4,7 @@ from .celery_config import app
 
 
 class BinanceApiConsumer(Task):
-    name = 'task2'
+    name = 'BinanceApiConsumer'
 
     def run(self):
         print("task 1")
@@ -13,7 +13,7 @@ class BinanceApiConsumer(Task):
 app.register_task(BinanceApiConsumer())
 app.conf.beat_schedule = {
     BinanceApiConsumer.name: {
-        'task': BinanceApiConsumer.__module__,  # Path to the Task2 class
+        'task': BinanceApiConsumer.name,  # Path to the Task2 class
         'schedule': crontab(minute='*/1'),
     }
 }
