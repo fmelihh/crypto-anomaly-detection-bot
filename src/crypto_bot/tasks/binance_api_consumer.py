@@ -14,6 +14,6 @@ app.register_task(BinanceApiConsumer())
 app.conf.beat_schedule = {
     BinanceApiConsumer.name: {
         'task': BinanceApiConsumer.name,  # Path to the Task2 class
-        'schedule': crontab(minute='*/1'),
+        'schedule': crontab(minute='*/5'),
     }
 }
