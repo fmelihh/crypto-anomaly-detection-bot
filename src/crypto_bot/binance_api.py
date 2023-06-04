@@ -11,9 +11,7 @@ def request_to_binance_api():
     try:
         session = retrieve_session()
         res = session.get(API_URL)
-        converted_data = json.loads(res.text)
-        preprocessed_data = preprocess_api_request(data=converted_data)
-        return preprocessed_data
+        return json.loads(res.text)
     except RetryError as err:
         logger.exception("retry err: ", str(err))
     except Timeout as err:
@@ -22,7 +20,3 @@ def request_to_binance_api():
         logger.exception("http err: ", err.response.status_code, str(err))
     except Exception as err:
         logger.exception("unidentified err: ", str(err))
-
-
-def preprocess_api_request(data: dict) -> dict:
-    return data

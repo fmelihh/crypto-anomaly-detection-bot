@@ -1,5 +1,5 @@
+from loguru import logger
 from src.crypto_bot import app
 
-
 if __name__ == "__main__":
-   print("a")
+    logger.info("Bot has been started.")
