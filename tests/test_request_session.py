@@ -6,7 +6,7 @@ from src.crypto_bot.utils import retrieve_session
 
 def test_status_code_200():
     session = retrieve_session()
-    response = session.get('https://postman-echo.com/status/200')
+    response = session.get("https://postman-echo.com/status/200")
     assert response.status_code == 200
 
 
@@ -24,6 +24,3 @@ def test_retry(caplog):
     assert "Retry(total=0, " in caplog.records[2].message
     assert "Retry(total=1, " in caplog.records[1].message
     assert "Retry(total=2, " in caplog.records[0].message
-
-
-

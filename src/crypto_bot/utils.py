@@ -13,7 +13,7 @@ def retrieve_session(retry_count: int = 5) -> requests.Session:
     )
     s = requests.Session()
     s.headers["User-Agent"] = _retrieve_headers()
-    s.mount('http://', HTTPAdapter(max_retries=retry_strategy))
+    s.mount("http://", HTTPAdapter(max_retries=retry_strategy))
     return s
 
 
